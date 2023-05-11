@@ -2,6 +2,11 @@ namespace cap_inventory;
 
 using {managed} from '@sap/cds/common';
 
+entity Userdetail1 {
+    key username : String
+        @title : 'Username';
+}
+
 entity Userdetail {
     key username : String
         @title : 'Username';
