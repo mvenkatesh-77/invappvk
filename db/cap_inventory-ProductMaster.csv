@@ -1,0 +1,11 @@
+prodId,prodCat,prodName,prodType,uom,active,qty
+P001,Electronics,Smartphone,Mobile Phones,Piece,True,100
+P002,Electronics,Laptop,Computers,Piece,True,50
+P003,Electronics,Headphones,Audio Accessories,Piece,True,200
+P004,Electronics,Power Bank,Mobile Accessories,Piece,True,150
+P005,Electronics,Smart TV,Televisions,Piece,True,20
+P006,Books,Harry Potter and the Philosopher's Stone,Novel,Piece,True,300
+P007,Books,To Kill a Mockingbird,Novel,Piece,True,250
+P008,Books,The Hitchhiker's Guide to the Galaxy,Science Fiction,Piece,True,175
+P009,Books,The Da Vinci Code,Thriller,Piece,True,150
+P010,Books,The Lord of the Rings,Fantasy,Piece,True,100
