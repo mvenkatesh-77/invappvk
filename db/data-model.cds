@@ -18,6 +18,24 @@ entity Userdetail {
         @title : 'Image';
 }
 
+entity StkTransfer : managed {
+    key prodId   : String
+        @title : 'Product ID';
+        prodCat  : String
+        @title : 'Product Category';
+        prodName : String
+        @title : 'Product Name';
+        prodType : String
+        @title : 'Product Type';
+        stocks   : Integer
+        @title : 'Stocks';
+        UOM   : String
+        @title : 'UOM';
+        status   : String
+        @title : 'Status';
+// productInv : Association to many ProductInv on productInv.productMaster = $self;
+}
+
 entity ProductMaster : managed {
     key prodId   : String
         @title : 'Product ID';
