@@ -15,6 +15,8 @@ sap.ui.define([
         return Controller.extend("com.sap.inventory.controller.StockTransfer", {
             onInit: function () {
 
+//                this.getRouterInfo().getRoute('StockTransfer').attachPatternMatched(this._onRouteMatched,this);
+
                 oController = this;
                 if (sap.ui.getCore().getModel("logonData") != undefined) {
                     data = sap.ui.getCore().getModel("logonData").getProperty("/userdet");
@@ -25,7 +27,6 @@ sap.ui.define([
                 } else {
                     this.getOwnerComponent().getRouter().navTo("RouteLogonView");
                 }
-
 
                 var shellbar = this.getView().byId('avatarId');
                 shellbar.setProperty("src", image);
@@ -45,7 +46,6 @@ sap.ui.define([
                         oView.addDependent(oPopover);
                         oPopover.bindElement("//userdet/0");
                         oController.byId("popimg").setSrc(image);
-                        // oController.byId("myPopover").title("Test");
                         var pop = oController.byId("myPopover");
                         pop.setProperty("title", "Welcome!, " + data[0].username);
                         return oPopover;
@@ -64,6 +64,9 @@ sap.ui.define([
             onOpenAddDialog: function () {
                 oController.getView().byId("OpenDialog").open();
             },
+            onbuttonpress: function () {
+                oController.getView().byId("OpenStore").open();
+            },    
             onCancelDialog: function (oEvent) {
                 oEvent.getSource().getParent().close();
             },
@@ -100,6 +103,9 @@ sap.ui.define([
             onViewDashBoard: function () {
                 oController.getOwnerComponent().getRouter().navTo("DashBoard");
             },
+            onCheckout: function () {
+                oController.getOwnerComponent().getRouter().navTo("Dispatch");
+            },     
             onFilterPosts: function (oEvent) {
                 // build filter array
                 var aFilter = [];
