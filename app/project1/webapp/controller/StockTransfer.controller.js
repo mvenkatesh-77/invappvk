@@ -32,6 +32,35 @@ sap.ui.define([
                 shellbar.setProperty("src", image);
 
             },
+// Tried Code added for navigation and routing data             
+//            _onRouteMatched: function(oEvent){
+//                var stks = oEvent.getParameter('arguments').stocks;
+//                console.log(stks);
+//            }, 
+
+// onbuttonpress: function (oEvent) {
+// },    
+//     var oView = this.getView();
+//     var path = oEvent.getSource().getBindingContext("StockTransfer").getPath();
+//     // create dialog lazily
+//     if (!this.byId("OpenStore")) {
+//     // load asynchronous XML fragment
+//     // Fragment.load({
+//     //     id: oView.getId(),
+//     //     name: "AMARMN.SAPUI5TABLE.view.inputdialog",
+//     //     controller: this
+// //         }).then(function (oDialog) {
+//     // connect dialog to the root view 
+//     //of this component (models, lifecycle)
+// //    oView.addDependent(oDialog);
+//     oController.getView().byId(OpenStore).bindElement({
+//         path: path,
+//         model: "StockTransfer"
+//         });
+//         oController.getView().byId(OpenStore).open();
+//     });
+//     }
+//     },
             onAavtarPress: function (oEvent) {
 
                 var oButton = oEvent.getSource(),
@@ -64,8 +93,21 @@ sap.ui.define([
             onOpenAddDialog: function () {
                 oController.getView().byId("OpenDialog").open();
             },
-            onbuttonpress: function () {
-                oController.getView().byId("OpenStore").open();
+            onbuttonpress: function (oEvent) {
+                //   let mystks = this.getView().byID("idSk");
+
+                // var tb = this.getView().byId("table0");
+                // var rowid = tb.getSelectedIndices();
+                // var kosten = tb.getRows()[rowid].getCells()[0].getText();
+                // var object = tb.getRows()[rowid].getCells()[1].getText();    
+                var path = oEvent.getSource().getBindingContext().getPath();       
+//                var path = oEvent.getSource().getBindingContext().getObject();       
+                oController.getView().byId('OpenStore').bindElement({
+                    path: path,
+//                    model: "sample"
+                    }); 
+                 oController.getView().byId("OpenStore").open();
+
             },    
             onCancelDialog: function (oEvent) {
                 oEvent.getSource().getParent().close();
